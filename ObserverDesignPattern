@@ -52,7 +52,7 @@ public class YoutubeChannel : Subject
 
     public override void SetState(string state)
     {
-        if (this.SubjectState != state)//when the state is different set it
+        if (this.SubjectState != state)//when the state changes set it
         {
             SubjectState = state;
             Notify();//notify the subscribers
