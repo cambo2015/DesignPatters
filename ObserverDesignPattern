@@ -12,13 +12,13 @@ public class Program
         s.AttachRange(
             new List<Observer>()
             {
-                new YoutubeSubscribers("ob1"),
-                new YoutubeSubscribers("ob2"),
-                new YoutubeSubscribers("ob3")
+                new YoutubeSubscriber("ob1"),
+                new YoutubeSubscriber("ob2"),
+                new YoutubeSubscriber("ob3")
             }
         );
 
-        s.SetState("xyz");
+        s.SetState("Text Changed!");
         ReadKey();
     }
 }
@@ -48,8 +48,7 @@ public class YoutubeChannel : Subject
 {
     public YoutubeChannel(string state)=>
         SetState(state);
-    
-
+        
     public override void SetState(string state)
     {
         if (this.SubjectState != state)//when the state changes set it
@@ -60,10 +59,10 @@ public class YoutubeChannel : Subject
     }
 }
 
-public class YoutubeSubscribers : Observer
+public class YoutubeSubscriber : Observer
 {
     private string Name { get; set; }
-    public YoutubeSubscribers(string name)=>this.Name = name;
+    public YoutubeSubscriber(string name)=>this.Name = name;
     
 
     public override void Update(string state)=>
