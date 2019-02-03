@@ -8,13 +8,11 @@ public class Program
     public static void Main()
     {
         YoutubeChannel s = new YoutubeChannel("state 1")
-		{
-           new YoutubeSubscriber("ob1"),
-           new YoutubeSubscriber("ob2"),
-           new YoutubeSubscriber("ob3"),
-			   
-            
-		};
+        {
+        	new YoutubeSubscriber("ob1"),
+        	new YoutubeSubscriber("ob2"),
+        	new YoutubeSubscriber("ob3"),
+        };
         s += new YoutubeSubscriber("ob4");
         s.SetState("Text Changed!");
         
